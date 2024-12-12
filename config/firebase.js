@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {GoogleAuthProvider,FacebookAuthProvider,} from "firebase/auth";
+import {GoogleAuthProvider,FacebookAuthProvider,getAuth} from "firebase/auth";
 
 // Firebase configuration using environment variables
 const firebaseConfig = {
@@ -17,7 +17,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+const auth = getAuth();
+
 const googleAuth= new GoogleAuthProvider();
+const facebookAuth= new FacebookAuthProvider();
 
 // Analytics (optional)
 let analytics;
@@ -26,4 +29,4 @@ if (import.meta.env.MODE !== "development") {
     analytics = getAnalytics(app);
 }
 
-export { app, analytics ,googleAuth};
+export { app,auth, analytics, googleAuth, facebookAuth};
