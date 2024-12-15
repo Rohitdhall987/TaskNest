@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {FaGoogle, FaFacebook} from "react-icons/fa6";
 
-import {auth , googleAuth, facebookAuth} from "../config/firebase.js";
+import {auth , googleAuth, facebookAuth} from "../../config/firebase.js";
 import {signInWithPopup}from "firebase/auth";
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
     }
 
     function signIn(provider){
-        signInWithPopup(auth ,provider).then((result)=>{alert(result)});
+        signInWithPopup(auth ,provider).then((result)=>{alert(result.user.displayName)});
     }
 
 
@@ -21,7 +21,7 @@ function Login() {
                 <p className="text-7xl font-extrabold">TaskNest</p>
                 <p>An advanced to-do list for daily use.</p>
             </section>
-            <hr/>
+            <hr className="my-8" />
             <section className="flex items-center justify-center w-full">
                 <div className="w-2/3 sm:w-2/5 md:w-1/4 border border-black rounded-lg p-4">
                     <input className='w-full mb-1 text-xl p-1' placeholder="email" type="email" />
