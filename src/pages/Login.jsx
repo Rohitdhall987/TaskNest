@@ -1,7 +1,7 @@
 import {useState} from 'react';
-import {FaGoogle, FaFacebook} from "react-icons/fa6";
+import {FaGoogle} from "react-icons/fa6";
 
-import {auth , googleAuth, facebookAuth} from "../../config/firebase.js";
+import {auth , googleAuth, } from "../../config/firebase.js";
 import {signInWithPopup}from "firebase/auth";
 
 function Login() {
@@ -18,12 +18,12 @@ function Login() {
     return (
         <>
             <section className="flex flex-col items-center justify-center w-full">
-                <p className="text-7xl font-extrabold">TaskNest</p>
+                <p className="text-7xl font-extrabold mt-8">TaskNest</p>
                 <p>An advanced to-do list for daily use.</p>
             </section>
-            <hr className="my-8" />
-            <section className="flex items-center justify-center w-full">
-                <div className="w-2/3 sm:w-2/5 md:w-1/4 border border-black rounded-lg p-4">
+            <section className="flex items-center justify-center w-full mt-8 login-card-wrapper">
+                {/*<div className="w-2/3 sm:w-2/5 md:w-1/4  p-4 login-card">*/}
+                <div className=" p-4 login-card">
                     <input className='w-full mb-1 text-xl p-1' placeholder="email" type="email" />
                     <input className='w-full mb-1 text-xl p-1' placeholder="password" type="password" />
                     {
@@ -37,13 +37,12 @@ function Login() {
                     </div>
                     <div className="flex items-center justify-center w-full">
                         <hr className='w-full border-black' />
-                        <p className='p-4'>or</p>
+                        <p className='px-4'>or</p>
                         <hr className='w-full border-black'/>
                     </div>
-                    <div className="flex items-center justify-center w-full gap-2">
+                    <div className="flex items-center justify-center w-full pt-3">
                         <FaGoogle onClick={()=>signIn(googleAuth)} className='text-4xl p-1 border rounded-full'/>
-                        <FaFacebook onClick={()=>signIn(facebookAuth)} className='text-4xl p-1 border rounded-full'/>
-                    </div>
+                     </div>
                 </div>
             </section>
         </>

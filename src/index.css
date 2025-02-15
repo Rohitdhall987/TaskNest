@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #fffdf3;
+    background-image:
+            linear-gradient(90deg,
+            transparent 0px, transparent 16px,
+            rgba(0,0,0,0.1) 16px, rgba(0,0,0,0.1) 17px,
+            transparent 17px, transparent 31px,
+            rgba(0,0,0,0.1) 31px, rgba(0,0,0,0.1) 32px,
+            transparent 32px, transparent 48px),
+
+            linear-gradient(0deg,
+            transparent 0px, transparent 16px,
+            rgba(0,0,0,0.1) 16px, rgba(0,0,0,0.1) 17px,
+            transparent 17px, transparent 31px,
+            rgba(0,0,0,0.1) 31px, rgba(0,0,0,0.1) 32px,
+            transparent 32px, transparent 48px);
+
+    background-size: 100px 100px;
+}
+
+.login-card {
+    background-color: #fffceb;
+    width: 350px;
+    height: 250px;
+    clip-path: path('M 0,20 A 20,20 0,0,1 20,0 L 330,0 A 20,20 0,0,1 350,20 L 350,180 A 20,20 0,0,1 330,200 L 240,200 A 10,10 0,0,0 230,210 L 230,240 A 10,10 0,0,1 220,250 L 130,250 A 10,10 0,0,1 120,240 L 120,210 A 10,10 0,0,0 110,200 L 20,200 A 20,20 0,0,1 0,180 z');
+
+}
+
+.login-card-wrapper{
+    filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.2));
+}
