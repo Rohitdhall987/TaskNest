@@ -31,7 +31,7 @@ function Login() {
                                         :''
                     }
 
-                    <button className='w-full bg-gray-950 text-center text-white text-xl rounded my-1 p-1'>Login</button>
+                    <button className='w-full bg-orange-400 text-center text-white text-xl rounded my-1 p-1'>Login</button>
                     <div className='w-full flex justify-end'>
                         <p onClick={switchTypes}>{loginType?"Already have an account?":"Create account?"}</p>
                     </div>
